@@ -6,12 +6,10 @@ services:
     container_name: mongodb_server
     image: mongo:3.2.3
     volumes:
-      - ./leanote_data:/data/db
+      - ./leanote_db:/data/db
 
   server:
-    image: mariusv/leanote
-    environment:
-      - SITE_URL="http://localhost:9000"
+    image: cnfn/leanote
     depends_on:
       - db
     restart: always
@@ -23,3 +21,5 @@ services:
 
     volumes:
       - ./leanote/data:/leanote/data
+      - ./leanote/conf:/leanote/conf
+      - ./leanote/logs:/leanote/logs
