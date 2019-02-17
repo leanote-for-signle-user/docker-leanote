@@ -18,8 +18,20 @@ services:
     links:
       - db:mongodb
     container_name: leanote_server
+    logging:
+      driver: json-file
 
     volumes:
       - ./leanote/data:/leanote/data
       - ./leanote/conf:/leanote/conf
       - ./leanote/logs:/leanote/logs
+
+  nginx:
+    restart: always
+    container_name: nginx_server
+    image: nginx:1.14
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+      - 443:443

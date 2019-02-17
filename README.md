@@ -11,6 +11,7 @@ git clone https://github.com/private-leanote/docker-leanote.git
 #### 2. Create data folder
 
 ```
+cd docker-leanote
 mkdir -p ./leanote/data/{files,mongodb_backup,public/upload}
 ```
 
@@ -22,7 +23,9 @@ git clone https://github.com/cnfn/private-leanote-conf.git ./leanote/conf
 
 #### 4. Create the Stack which will include a MongoDB container and a Leanote one
 
-`docker-compose up -d`
+```
+docker-compose up -d
+```
 
 #### 5. Initialize database
 
