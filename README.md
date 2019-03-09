@@ -18,7 +18,7 @@ mkdir -p ./leanote/data/{files,mongodb_backup,public/upload}
 #### 3. Init configuration and routes file
 
 ```sh
-git clone https://github.com/cnfn/private-leanote-conf.git ./leanote/conf
+git clone https://github.com/leanote-for-signle-user/leanote-conf.git ./leanote/conf
 ```
 
 #### 4. Create the Stack which will include a MongoDB container and a Leanote one
